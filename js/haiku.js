@@ -8,8 +8,8 @@ constructor (lineOne, lineTwo, lineThree) {
 function lineOneCheck() {
   let IsHaiku = false;
   var syllable = require('syllable');
-  var count = lineOne.length
-  var syllables = 0
+  // var count = lineOne.length
+  var lineOneSyllable = syllable(lineOne)
   if (syllable == 5) {
     IsHaiku = true;
   }
@@ -21,8 +21,8 @@ function lineOneCheck() {
 function lineTwoCheck() {
   let IsHaiku = false;
   var syllable = require('syllable');
-  var count = lineTwo.length
-  var syllables = 0
+  // var count = lineTwo.length
+  var lineTwoSyllable = syllable(lineTwo)
   if (syllable == 7) {
     IsHaiku = true;
   }
@@ -34,8 +34,8 @@ function lineTwoCheck() {
 function lineThreeCheck() {
   let IsHaiku = false;
   var syllable = require('syllable');
-  var count = lineThree.length
-  var syllables = 0
+  // var count = lineThree.length
+  var lineThreeSyllable = syllable(lineThree)
   if (syllable == 5) {
     IsHaiku = true;
   }
