@@ -1,42 +1,39 @@
-export class Haiku
+export class Haiku {
 constructor (lineOne, lineTwo, lineThree) {
   this.lineOne = lineOne;
   this.lineTwo = lineTwo;
   this.lineThree = lineThree;
 }
 
-function lineOneCheck() {
-  let IsHaiku = false;
-  var syllable = require('syllable');
-  // var count = lineOne.length
-  var lineOneSyllable = syllable(lineOne)
-  if (syllable == 5) {
-    IsHaiku = true;
-  }
-  if (lineOne != "") {
-    IsHaiku = true;
-  }
-}
+CheckLines() {
+    //Checking if Haiku has three lines
+    let IsHaiku = false;
 
-function lineTwoCheck() {
-  let IsHaiku = false;
-  var syllable = require('syllable');
-  // var count = lineTwo.length
-  var lineTwoSyllable = syllable(lineTwo)
-  if (syllable == 7) {
-    IsHaiku = true;
+    if(this.lineOne !== "" && this.lineTwo !== "" && this.lineThree !== "")
+    {
+      IsHaiku = true;
+    }
+    return IsHaiku;
   }
-  if (lineTwo != "") {
-    IsHaiku = true;
-  }
-}
 
-function lineThreeCheck() {
-  let IsHaiku = false;
-  var syllable = require('syllable');
-  // var count = lineThree.length
-  var lineThreeSyllable = syllable(lineThree)
-  if (syllable == 5) {
-    IsHaiku = true;
+  CheckSyllables() {
+    //Checking if Line 1 has 5 syllables, line 2 has 7 and line 3 has 5 syllables
+
+    var syllable = require('syllable');
+    let IsHaiku = false;
+    let lineOne = this.lineOne;
+    let lineTwo = this.lineTwo;
+    let lineThree = this.lineThree;
+    let lineOneSyllable = syllable(lineOne);
+    let lineTwoSyllable = syllable(lineTwo);
+    let lineThreeSyllable = syllable(lineThree);
+
+
+    if( lineOneSyllable == 5 && lineTwoSyllable == 7 && lineThreeSyllable == 5)
+    {
+      IsHaiku = true;
+    }
+    return IsHaiku;
   }
+
 }
